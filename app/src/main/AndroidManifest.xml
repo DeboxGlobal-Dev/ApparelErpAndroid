@@ -10,10 +10,19 @@
         android:roundIcon="@mipmap/ic_launcher_apperal"
         android:supportsRtl="true"
         android:theme="@style/Theme.SplashActivity">
-        <activity android:name=".Activities.RegistrationActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Activities.DeboxPage"
-            android:screenOrientation="portrait"/>
+        <activity android:name=".Activities.StyleInfo"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".Activities.BarGraph"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".Activities.RegistrationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.DeboxPage"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.HomeActivity"
             android:screenOrientation="portrait" />
@@ -30,12 +39,12 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
 </manifest>

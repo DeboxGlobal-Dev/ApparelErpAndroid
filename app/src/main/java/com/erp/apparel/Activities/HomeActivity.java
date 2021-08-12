@@ -53,7 +53,7 @@ public class HomeActivity extends AppCompatActivity implements AdapterView.OnIte
     NavigationView navigationView;
     private PieChartView pieChartView,progesschartView;
     String[] time = {"01 May,2021", "02 May,2021", "03 May,2021", "04 May,2021", "05May,2021"};
-    LinearLayout m_home_ll, m_logout_ll;
+    LinearLayout m_home_ll, m_logout_ll,m_styleinfo_ll;
     DrawerLayout m_draw;
     ImageView m_navigation_icon,m_debox;
     TextView m_firstname;
@@ -73,6 +73,8 @@ public class HomeActivity extends AppCompatActivity implements AdapterView.OnIte
         navigationView = findViewById(R.id.nav_view);
         m_draw = findViewById(R.id.drawlayout);
         m_navigation_icon=findViewById(R.id.navigation_icon);
+
+        m_styleinfo_ll=findViewById(R.id.styleinfo_ll);
 
         m_totalstyle=findViewById(R.id.totalsale_HOME);
         m_projection=findViewById(R.id.projection_HOME);
@@ -135,6 +137,14 @@ public class HomeActivity extends AppCompatActivity implements AdapterView.OnIte
                 Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+
+        m_styleinfo_ll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,StyleInfo.class);
+                startActivity(intent);
             }
         });
 
