@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item android:id="@+id/nav_dashboard"
+                    android:icon="@mipmap/dashboardmenu"
+                    android:title="Dashboard"/>
+
+    <item android:id="@+id/nav_styleinfo"
+        android:icon="@mipmap/styleinfomenu"
+        android:title="Style Info."/>
+
+        <item android:id="@+id/nav_approvals"
+            android:icon="@mipmap/approvalmenu"
+            android:title="Approvals"/>
+
+        <item android:id="@+id/nav_reports"
+            android:icon="@mipmap/reportmenu"
+            android:title="Reports"/>
+
+        <item android:id="@+id/nav_profile"
+            android:icon="@mipmap/profilemenu"
+            android:title="Profile"/>
+
+<!--                <item android:id="@+id/nav_namenavigation"-->
+<!--                    android:icon="@mipmap/nikhal"-->
+<!--                    android:title="Profile"/>-->
+
+</menu>

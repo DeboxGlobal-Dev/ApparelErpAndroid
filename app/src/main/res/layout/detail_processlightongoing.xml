@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/key_ll">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Responsible Person :"
+                android:textSize="12sp"
+                android:textColor="#979A9A"
+                android:fontFamily="@font/universcondensedbold"
+                app:fontFamily="@font/universcondensedbold"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Count:"
+                android:textSize="12sp"
+                android:textColor="#979A9A"
+                android:fontFamily="@font/universcondensedbold"
+                app:fontFamily="@font/universcondensedbold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toRightOf="@+id/key_ll">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sanjeev Kumar"
+                android:id="@+id/res_person_PL"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:fontFamily="@font/universcondensedbold"
+                app:fontFamily="@font/universcondensedbold"
+                android:layout_marginLeft="5dp"
+                />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 "
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:id="@+id/count_PL"
+                android:fontFamily="@font/universcondensedbold"
+                app:fontFamily="@font/universcondensedbold"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View"
+            android:id="@+id/view_PL"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            android:fontFamily="@font/universcondensedbold"
+            app:fontFamily="@font/universcondensedbold"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/graydarkpure_background"/>
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:src="@drawable/graydotted_background"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+
+</LinearLayout>

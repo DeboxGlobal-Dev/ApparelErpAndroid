@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:orientation="vertical"
+    android:layout_marginTop="5dp"
+    android:background="@drawable/white_square_background"
+    android:layout_marginLeft="2.5dp"
+    android:layout_marginRight="2.5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/keystyle_ll"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Style"
+                    android:textSize="11sp"
+                    android:textColor="#979A9A"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3203"
+                    android:id="@+id/style_PRE"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"
+                    android:layout_marginLeft="5dp"
+                    android:maxLength="7"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Product Cost"
+                android:textSize="11sp"
+                android:textColor="#979A9A"
+                android:fontFamily="@font/universcondensedbold"
+                app:fontFamily="@font/universcondensedbold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="14dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3203"
+                android:id="@+id/product_PRE"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/universcondensedbold"
+                app:fontFamily="@font/universcondensedbold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toRightOf="@+id/keystyle_ll"
+            android:id="@+id/keyprocess_ll"
+            android:layout_marginTop="40dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Effective FOB Price"
+                android:id="@+id/res_person_PL"
+                android:textColor="#979A9A"
+                android:textSize="11sp"
+                android:fontFamily="@font/universcondensedbold"
+                app:fontFamily="@font/universcondensedbold"
+                android:layout_marginLeft="5dp"
+                />
+
+
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="- - - "
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:id="@+id/effectiveprice_PRE"
+                android:fontFamily="@font/universcondensedbold"
+                app:fontFamily="@font/universcondensedbold"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:singleLine="true"
+                android:maxLines="20"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toRightOf="@+id/keyprocess_ll"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="2.5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profit/Loss%"
+                android:textColor="#979A9A"
+                android:textSize="11sp"
+                android:fontFamily="@font/universcondensedbold"
+                app:fontFamily="@font/universcondensedbold"
+                android:layout_marginLeft="5dp"
+                />
+
+
+
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:text="---"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:id="@+id/pandl_PRE"
+                android:fontFamily="@font/universcondensedbold"
+                app:fontFamily="@font/universcondensedbold"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:singleLine="true"
+                android:maxLength="12"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentRight="true">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="Download PDF"
+            android:id="@+id/pdfview_PL"
+            android:textColor="@color/black"
+            android:textSize="9sp"
+            android:gravity="center"
+            android:fontFamily="@font/universcondensedbold"
+            app:fontFamily="@font/universcondensedbold"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:background="@drawable/yellowdarkpure_background"/>
+
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="Approve"
+                android:id="@+id/approve_PRE"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:fontFamily="@font/universcondensedbold"
+                app:fontFamily="@font/universcondensedbold"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/blue_background"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:src="@drawable/graydotted_background"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+
+</LinearLayout>

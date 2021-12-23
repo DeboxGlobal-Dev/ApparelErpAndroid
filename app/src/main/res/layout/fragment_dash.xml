@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="90dp"
+            android:weightSum="2"
+            android:background="@drawable/home__top_bg"
+            android:layout_marginLeft="10dp"
+            android:paddingBottom="15dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/topitem_ll">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight=".5"
+                android:layout_marginRight="10dp">
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/chart"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:padding="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_centerInParent="true"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="1"
+                    android:layout_marginRight="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:src="@mipmap/bluetickhome"
+                            android:id="@+id/bluetickhome_lf"
+                            android:layout_marginTop="7dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Total Styles "
+                            android:layout_gravity="center"
+                            android:textColor="#979A9A"
+                            android:textSize="10sp"
+                            android:layout_toRightOf="@+id/bluetickhome_lf"
+                            android:fontFamily="@font/universcondensedbold"
+                            app:fontFamily="@font/universcondensedbold"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="69"
+                            android:id="@+id/totalsale_HOME"
+                            android:layout_gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:fontFamily="@font/futura_heavy_font"
+                            app:fontFamily="@font/futura_heavy_font"
+                            android:layout_alignParentRight="true"/>
+
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:src="@mipmap/greentickhome"
+                            android:id="@+id/greentickhome_lf"
+                            android:layout_marginTop="7dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Projection"
+                            android:layout_gravity="center"
+                            android:textColor="#979A9A"
+                            android:textSize="11sp"
+                            android:fontFamily="@font/universcondensedbold"
+                            app:fontFamily="@font/universcondensedbold"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_toRightOf="@id/greentickhome_lf"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="36"
+                            android:id="@+id/projection_HOME"
+                            android:layout_gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:fontFamily="@font/futura_heavy_font"
+                            app:fontFamily="@font/futura_heavy_font"
+                            android:layout_alignParentRight="true"/>
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:src="@mipmap/yellowtickhome"
+                            android:id="@+id/yellowtickhome_lf"
+                            android:layout_marginTop="7dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="On-Order    "
+                            android:layout_gravity="center"
+                            android:textColor="#979A9A"
+                            android:textSize="10sp"
+                            android:fontFamily="@font/universcondensedbold"
+                            app:fontFamily="@font/universcondensedbold"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_toRightOf="@id/yellowtickhome_lf"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="33"
+                            android:id="@+id/onorder_HOME"
+                            android:layout_gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:fontFamily="@font/futura_heavy_font"
+                            app:fontFamily="@font/futura_heavy_font"
+                            android:layout_alignParentRight="true"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1.5">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/bar_chart_HOME"
+                        android:layout_width="match_parent"
+                        android:layout_height="112dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="10dp"/>
+
+                </LinearLayout>
+
+
+
+                <RelativeLayout
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:src="@mipmap/redtickhome"
+                        android:layout_marginTop="7dp"
+                        android:id="@+id/redtickhome"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Delayed"
+                        android:layout_gravity="center"
+                        android:textColor="#979A9A"
+                        android:textSize="10sp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/redtickhome"
+                        android:fontFamily="@font/universcondensedbold"
+                        app:fontFamily="@font/universcondensedbold"
+                        android:layout_marginTop="5dp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="650"
+                        android:id="@+id/delayed_HOME"
+                        android:layout_gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/futura_heavy_font"
+                        app:fontFamily="@font/futura_heavy_font"
+                        android:layout_alignParentRight="true"/>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:src="@mipmap/greentickhome"
+                        android:id="@+id/greentickhome"
+                        android:layout_marginTop="7dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Upcoming"
+                        android:layout_gravity="center"
+                        android:textColor="#979A9A"
+                        android:textSize="10sp"
+                        android:layout_toRightOf="@+id/greentickhome"
+                        android:fontFamily="@font/universcondensedbold"
+                        app:fontFamily="@font/universcondensedbold"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="632"
+                        android:id="@+id/upcoming_HOME"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/futura_heavy_font"
+                        app:fontFamily="@font/futura_heavy_font"
+                        android:layout_alignParentRight="true"/>
+
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:src="@mipmap/yellowtickhome"
+                        android:layout_marginTop="7dp"
+                        android:id="@+id/yellowtickhome"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="On-going"
+                        android:layout_gravity="center"
+                        android:textColor="#979A9A"
+                        android:textSize="10sp"
+                        android:layout_toRightOf="@+id/yellowtickhome"
+                        android:fontFamily="@font/universcondensedbold"
+                        app:fontFamily="@font/universcondensedbold"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="650"
+                        android:id="@+id/ongoing_HOME"
+                        android:layout_gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/futura_heavy_font"
+                        app:fontFamily="@font/futura_heavy_font"
+                        android:layout_alignParentRight="true"/>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topitem_ll"
+        android:layout_marginBottom="100dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="30dp">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/otd1_ll">
+
+            <LinearLayout
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:id="@+id/otds_ll"
+                android:background="@drawable/home__items_bg"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+
+                android:layout_marginRight="5dp">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/otdshome"
+                    android:layout_marginLeft="18dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="OTD's"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:background="@drawable/home__items_bg"
+                android:id="@+id/processlight_ll"
+                android:paddingBottom="20dp"
+                android:paddingTop="20dp"
+                android:layout_marginLeft="5dp">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/processlighthome"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="15dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PROCESS LIGHT \nSYSTEM"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:weightSum="2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/pre1_ll"
+            android:layout_below="@+id/otd1_ll">
+
+            <LinearLayout
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:id="@+id/preordercost_ll"
+                android:background="@drawable/home__items_bg"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:layout_marginRight="5dp">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/preordercosthome"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="15dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PRE-ORDER \nCOST"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:background="@drawable/home__items_bg"
+                android:id="@+id/scorecard_ll"
+                android:paddingBottom="20dp"
+                android:paddingTop="20dp"
+                android:layout_marginLeft="5dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/scorecardhome"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="17dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="SCORECARD"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:weightSum="2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_below="@id/pre1_ll">
+
+            <LinearLayout
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:id="@+id/businesssummary_ll"
+                android:background="@drawable/home__items_bg"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+
+                android:layout_marginRight="5dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/businesssummaryhome"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BUSINESS \nSUMMARY"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="5dp"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:background="@drawable/home__items_bg"
+                android:id="@+id/spomgmt_ll"
+                android:paddingBottom="20dp"
+                android:paddingTop="20dp"
+                android:layout_marginLeft="5dp">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/spohome"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="15dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SPO \nMANAGEMENT"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="5dp"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</RelativeLayout>

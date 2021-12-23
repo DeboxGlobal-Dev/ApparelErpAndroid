@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="5dp"
+    android:background="@drawable/white_square_background"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Supplier Name: "
+            android:textSize="11sp"
+            android:textColor="#979A9A"
+            android:fontFamily="@font/universcondensedbold"
+            app:fontFamily="@font/universcondensedbold"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text="X1XXXX XXXXX XXX"
+            android:id="@+id/suppliername_SPO"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/universcondensedbold"
+            app:fontFamily="@font/universcondensedbold"
+            android:layout_marginLeft="5dp"
+            android:singleLine="true"
+            android:maxLength="30"/>
+
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rec_MATERIAL"/>
+
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:src="@drawable/graydotted_background"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"/>
+
+</LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="13dp"
+        android:layout_alignParentRight="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date: "
+            android:textColor="#979A9A"
+            android:textSize="11sp"
+            android:gravity="center"
+            android:fontFamily="@font/universcondensedbold"
+            app:fontFamily="@font/universcondensedbold"
+            />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="28-08-21"
+                android:id="@+id/date_SPO"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:fontFamily="@font/universcondensedbold"
+                app:fontFamily="@font/universcondensedbold" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

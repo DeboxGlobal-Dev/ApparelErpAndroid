@@ -35,18 +35,27 @@
                 android:layout_marginTop="15dp"/>
 
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="35dp"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
                 android:layout_marginTop="10dp"
                 android:src="@mipmap/deboxicon"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="15dp"/>
+                android:layout_marginRight="20dp"/>
         </RelativeLayout>
 
         <View
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="5dp"
             android:background="#3498DB"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@drawable/blue_background"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"/>
@@ -110,19 +119,20 @@
                     android:layout_gravity="center">
 
                     <ImageView
-                        android:layout_width="12dp"
-                        android:layout_height="12dp"
-                        android:src="@mipmap/bluecircle" />
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:src="@mipmap/bluecirclelat"
+                        android:layout_marginTop="2dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Total Style "
                         android:layout_gravity="center"
-                        android:textColor="#30302D"
+                        android:textColor="#979A9A"
                         android:textSize="10sp"
-                        android:fontFamily="@font/futura_heavy_font"
-                        app:fontFamily="@font/futura_heavy_font"
+                        android:fontFamily="@font/universcondensedbold"
+                        app:fontFamily="@font/universcondensedbold"
                         android:layout_marginLeft="10dp"/>
 
                 </LinearLayout>
@@ -149,19 +159,20 @@
                     android:layout_gravity="center">
 
                     <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:src="@mipmap/greencircle" />
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:src="@mipmap/greencirclelat"
+                        android:layout_marginTop="2dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Projection"
                         android:layout_gravity="center"
-                        android:textColor="#30302D"
+                        android:textColor="#979A9A"
                         android:textSize="11sp"
-                        android:fontFamily="@font/futura_heavy_font"
-                        app:fontFamily="@font/futura_heavy_font"
+                        android:fontFamily="@font/universcondensedbold"
+                        app:fontFamily="@font/universcondensedbold"
                         android:layout_marginLeft="10dp"/>
 
                 </LinearLayout>
@@ -188,19 +199,20 @@
                     android:layout_gravity="center">
 
                     <ImageView
-                        android:layout_width="12dp"
-                        android:layout_height="12dp"
-                        android:src="@mipmap/yellowcircle" />
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:src="@mipmap/yellowcirclelat"
+                        android:layout_marginTop="2dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="On-Order "
+                        android:text="On-Order    "
                         android:layout_gravity="center"
-                        android:textColor="#30302D"
+                        android:textColor="#979A9A"
                         android:textSize="10sp"
-                        android:fontFamily="@font/futura_heavy_font"
-                        app:fontFamily="@font/futura_heavy_font"
+                        android:fontFamily="@font/universcondensedbold"
+                        app:fontFamily="@font/universcondensedbold"
                         android:layout_marginLeft="10dp"
                         android:paddingBottom="20dp"/>
 
@@ -209,6 +221,100 @@
             </LinearLayout>
 
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:weightSum="3"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="5dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_marginTop="23dp"
+                android:id="@+id/styleinfo_ll">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/styleinfolat"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Style info"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"
+                    android:layout_marginTop="2dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_marginTop="15dp"
+                android:id="@+id/processlight_ll">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:src="@mipmap/processlightlat"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Process Light System"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_marginTop="20dp"
+                android:id="@+id/businesssummary_ll">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/businesssummarylat"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Business Summary"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -223,104 +329,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_weight="1"
-                android:layout_marginTop="5dp"
-                android:id="@+id/styleinfo_ll">
-
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@mipmap/styleinfo"
-                    android:layout_gravity="center"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Style info"
-                    android:layout_gravity="center"
-                    android:textColor="@color/black"
-                    android:textSize="11sp"
-                    android:fontFamily="@font/futura_heavy_font"
-                    app:fontFamily="@font/futura_heavy_font"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                android:layout_marginTop="20dp">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@mipmap/processlightsystem"
-                    android:layout_gravity="center"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="Process Light System"
-                    android:layout_gravity="center"
-                    android:textColor="@color/black"
-                    android:textSize="11sp"
-                    android:fontFamily="@font/futura_heavy_font"
-                    app:fontFamily="@font/futura_heavy_font"/>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                android:layout_marginTop="20dp">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@mipmap/businesssummary"
-                    android:layout_gravity="center"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="Business Summary"
-                    android:layout_gravity="center"
-                    android:textColor="@color/black"
-                    android:textSize="11sp"
-                    android:fontFamily="@font/futura_heavy_font"
-                    app:fontFamily="@font/futura_heavy_font"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="30dp"
-            android:weightSum="3"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="5dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_weight=".8"
-                android:layout_marginTop="5dp">
+                android:id="@+id/otds_ll">
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@mipmap/odts"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:src="@mipmap/otdlat"
                     android:layout_gravity="center"/>
 
                 <TextView
@@ -331,8 +346,8 @@
                     android:textColor="@color/black"
                     android:textSize="11sp"
                     android:layout_marginTop="5dp"
-                    android:fontFamily="@font/futura_heavy_font"
-                    app:fontFamily="@font/futura_heavy_font"/>
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
 
             </LinearLayout>
 
@@ -340,13 +355,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_weight="1.8"
-                android:layout_marginTop="5dp">
+                android:layout_weight="1.50"
+                android:layout_marginTop="5dp"
+                android:id="@+id/scorecard_ll">
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@mipmap/scorecard"
+                    android:src="@mipmap/scorecardlat"
                     android:layout_gravity="center"/>
 
                 <TextView
@@ -357,8 +373,8 @@
                     android:layout_gravity="center"
                     android:textColor="@color/black"
                     android:textSize="11sp"
-                    android:fontFamily="@font/futura_heavy_font"
-                    app:fontFamily="@font/futura_heavy_font"/>
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
 
             </LinearLayout>
 
@@ -367,25 +383,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_weight=".4"
-                android:layout_marginTop="5dp">
+                android:layout_weight=".8"
+                android:layout_marginTop="3dp"
+                android:id="@+id/produtionreport_ll">
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@mipmap/productionreports"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@mipmap/productionreportlat"
                     android:layout_gravity="center"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="2dp"
                     android:text="Production Reports"
                     android:layout_gravity="center"
                     android:textColor="@color/black"
                     android:textSize="11sp"
-                    android:fontFamily="@font/futura_heavy_font"
-                    app:fontFamily="@font/futura_heavy_font"/>
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
 
             </LinearLayout>
 
@@ -394,13 +411,78 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:weightSum="2"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:id="@+id/preordercost_ll">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:src="@mipmap/preorder"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pre-Order Cost"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:id="@+id/spomgmt_ll">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@mipmap/spomgmt"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="SPO Management"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:orientation="vertical"
             android:background="@drawable/white_background"
             android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp">
+            android:layout_marginRight="5dp"
+            android:paddingBottom="20dp">
 
             <Spinner
+                android:visibility="gone"
                 android:id="@+id/spinner"
                 android:layout_width="150dp"
                 android:layout_height="40dp"
@@ -413,7 +495,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="3">
+                android:weightSum="3"
+                android:layout_marginTop="10dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -442,20 +525,22 @@
                         android:layout_gravity="center">
 
                         <ImageView
-                            android:layout_width="12dp"
-                            android:layout_height="12dp"
-                            android:src="@mipmap/redcircle" />
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:src="@mipmap/redcirclelat"
+                            android:layout_marginTop="2dp"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Delayed"
                             android:layout_gravity="center"
-                            android:textColor="#30302D"
+                            android:textColor="#979A9A"
                             android:textSize="10sp"
-                            android:fontFamily="@font/futura_heavy_font"
-                            app:fontFamily="@font/futura_heavy_font"
-                            android:layout_marginLeft="10dp"/>
+                            android:layout_marginLeft="10dp"
+                            android:fontFamily="@font/universcondensedbold"
+                            app:fontFamily="@font/universcondensedbold"
+                            />
 
                     </LinearLayout>
 
@@ -481,19 +566,20 @@
                         android:layout_marginLeft="4dp">
 
                         <ImageView
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
-                            android:src="@mipmap/greencircle" />
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:src="@mipmap/greencirclelat"
+                            android:layout_marginTop="2dp"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Upcoming"
                             android:layout_gravity="center"
-                            android:textColor="#30302D"
+                            android:textColor="#979A9A"
                             android:textSize="10sp"
-                            android:fontFamily="@font/futura_heavy_font"
-                            app:fontFamily="@font/futura_heavy_font"
+                            android:fontFamily="@font/universcondensedbold"
+                            app:fontFamily="@font/universcondensedbold"
                             android:layout_marginLeft="10dp"/>
 
 
@@ -536,19 +622,20 @@
                         android:layout_gravity="center">
 
                         <ImageView
-                            android:layout_width="12dp"
-                            android:layout_height="12dp"
-                            android:src="@mipmap/yellowcircle" />
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:src="@mipmap/yellowcirclelat"
+                            android:layout_marginTop="2dp"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="On-going"
                             android:layout_gravity="center"
-                            android:textColor="#30302D"
+                            android:textColor="#979A9A"
                             android:textSize="10sp"
-                            android:fontFamily="@font/futura_heavy_font"
-                            app:fontFamily="@font/futura_heavy_font"
+                            android:fontFamily="@font/universcondensedbold"
+                            app:fontFamily="@font/universcondensedbold"
                             android:layout_marginLeft="10dp"/>
 
                     </LinearLayout>
@@ -565,7 +652,6 @@
 
 
             </LinearLayout>
-
 
         </LinearLayout>
     </LinearLayout>

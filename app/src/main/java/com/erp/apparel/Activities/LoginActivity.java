@@ -26,12 +26,15 @@ import com.android.volley.toolbox.Volley;
 import com.erp.apparel.AppConstant.AppNetworkConstants;
 import com.erp.apparel.Data.DialogManager;
 import com.erp.apparel.Data.Prefs;
+import com.erp.apparel.Models.HomeModel;
+import com.erp.apparel.Models.HomeResponseBean;
 import com.erp.apparel.Models.LoginResponseBean;
 import com.erp.apparel.R;
 import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -45,6 +48,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView m_forgetpwd;
     RelativeLayout m_login_header;
     Dialog loaderdialog;
+    ArrayList<HomeModel> homeModels;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +62,10 @@ public class LoginActivity extends AppCompatActivity {
         m_button=findViewById(R.id.button_LOGIN);
         m_forgetpwd=findViewById(R.id.forgetpsd_LOGIN);
         m_login_header=findViewById(R.id.login_header);
+
+        homeModels=new ArrayList<>();
+
+        getDashBoard();
 
         m_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -128,6 +136,7 @@ public class LoginActivity extends AppCompatActivity {
 
                             Prefs.INSTANCE.setFirstName(firstName);
                             Prefs.INSTANCE.setLastName(lastName);
+                            Prefs.INSTANCE.setID(id);
 
                             Intent i = new Intent(LoginActivity.this,HomeActivity.class);
                             startActivity(i);
@@ -280,5 +289,58 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
         dialog.show();
+    }
+
+
+    public void getDashBoard(){
+
+        loaderdialog.show();
+
+        String url = AppNetworkConstants.DASHBOARD;
+
+        Log.e("mylog", "MY DashBoard url are: " + url);
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                loaderdialog.dismiss();
+                Log.e("mylog", "your Dashboard response is :" + response);
+
+                try {
+                    HomeResponseBean responseBean = HomeResponseBean.fromJson(response);
+                    if (responseBean != null) {
+
+                        if (responseBean.Status.equals("0")) {
+                            homeModels.addAll(responseBean.TotalRecord);
+
+                            String totalStyle=homeModels.get(0).getTotalStyle();
+                            String onOrder=homeModels.get(0).getOnOrder();
+                            String projection=homeModels.get(0).getProjection();
+                            String upComing=homeModels.get(0).getUpComing();
+                            String delayed=homeModels.get(0).getDelayed();
+                            String  onGoing=homeModels.get(0).getOnGoing();
+
+                            Prefs.INSTANCE.setDelayed(Integer.parseInt(delayed));
+                            Prefs.INSTANCE.setOngoing(Integer.parseInt(onGoing));
+                            Prefs.INSTANCE.setUpcoming(Integer.parseInt(upComing));
+                        }
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    Log.e("MyLog", "onResponse: Error: " + e.getMessage());
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                loaderdialog.dismiss();
+                Toast.makeText(LoginActivity.this, "No Internet...", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
     }
 }

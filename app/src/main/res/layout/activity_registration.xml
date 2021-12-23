@@ -1,21 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.RegistrationActivity">
+    android:orientation="vertical"
+    tools:context=".Activities.HomeActivity"
+    android:background="@mipmap/apparelhomebg">
 
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Registration is Under Process"
-        android:layout_gravity="center"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        android:fontFamily="@font/futura_heavy_font"
-        app:fontFamily="@font/futura_heavy_font"
-        android:gravity="center"
-        android:layout_centerInParent="true"/>
+        android:orientation="horizontal">
 
-</RelativeLayout>
+        <ImageView
+            android:id="@+id/navigation_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="27dp"
+            android:src="@mipmap/hamberghome"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="10dp"
+            android:src="@mipmap/apperallogo"
+            android:layout_marginTop="17.5dp"/>
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="22dp"
+            android:src="@mipmap/deboxwhiteicon"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"/>
+    </RelativeLayout>
+
+    <View
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#3498DB"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/white_background">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registration is Under Process"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:fontFamily="@font/futura_heavy_font"
+            app:fontFamily="@font/futura_heavy_font"
+            android:gravity="center"
+            android:layout_marginTop="200dp"
+            android:layout_centerInParent="true"/>
+
+</LinearLayout>
+
+
+</LinearLayout>

@@ -6,7 +6,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,8 +42,8 @@ public class StyleInfo extends AppCompatActivity {
     LinearLayoutManager layoutManager;
     TextView m_totalstyle,m_projection,m_onorder;
     ArrayList<HomeModel> homeModels;
-
-
+    EditText m_search;
+    ImageView m_cancel_search;
 
         @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,11 +56,55 @@ public class StyleInfo extends AppCompatActivity {
             m_totalstyle=findViewById(R.id.totalstyle_STYLEINO);
             m_projection=findViewById(R.id.projection_STYLEINO);
             m_onorder=findViewById(R.id.onorder_STYLEINO);
+            m_search=findViewById(R.id.search_TV);
+            m_cancel_search=findViewById(R.id.cancel_search);
 
         homeModels=new ArrayList<>();
         styleInfo=new ArrayList<>();
         getDashBoard();
         getStyleInfo();
+
+       /* String search=m_search.getText().toString();
+
+            if(!search.equals(""))
+            {
+                m_cancel_search.setVisibility(View.VISIBLE);
+            }
+            else {
+                m_cancel_search.setVisibility(View.GONE);
+            }*/
+
+
+            m_search.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void afterTextChanged(Editable s) {
+
+                    filter(s.toString());
+
+                    if(!s.equals(""))
+                    {
+                        m_cancel_search.setVisibility(View.VISIBLE);
+                    }
+                    else {
+                        m_cancel_search.setVisibility(View.GONE);
+                    }
+                }
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                }
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                }
+            });
+
+            m_cancel_search.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    m_search.setText("");
+                    m_cancel_search.setVisibility(View.GONE);
+                }
+            });
+
             layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
 
             m_rec_style.setLayoutManager(layoutManager);
@@ -62,6 +112,19 @@ public class StyleInfo extends AppCompatActivity {
             m_rec_style.setAdapter(adapter);
 
 
+    }
+
+    public void filter(String text) {
+        ArrayList<StyleInfoModel> filterlist=new ArrayList<>();
+        for(StyleInfoModel item : styleInfo)
+        {
+            if(item.getStyleId().toLowerCase().contains(text.toLowerCase())||
+                    item.getPriority().toLowerCase().contains(text.toLowerCase()) ||
+                    item.getStatus().toLowerCase().contains(text.toLowerCase())) {
+                filterlist.add(item);
+            }
+        }
+        adapter.filterList(filterlist);
     }
 
     public void getStyleInfo(){
@@ -135,9 +198,27 @@ public class StyleInfo extends AppCompatActivity {
                             String projection=homeModels.get(0).getProjection();
                             String upComing=homeModels.get(0).getUpComing();
 
-                            m_totalstyle.setText(totalStyle);
-                            m_onorder.setText(onOrder);
-                            m_projection.setText(projection);
+                            if(totalStyle.length()!=1)
+                            {
+                                m_totalstyle.setText(totalStyle);
+                            }else {
+                                m_totalstyle.setText("0"+totalStyle);
+                            }
+
+                            if(onOrder.length()!=1)
+                            {
+                                m_onorder.setText(onOrder);
+                            }else {
+                                m_onorder.setText("0"+onOrder);
+                            }
+
+                            if(projection.length()!=1)
+                            {
+                                m_projection.setText(projection);
+                            }else {
+                                m_projection.setText("0"+projection);
+                            }
+
                         }
                     }
 

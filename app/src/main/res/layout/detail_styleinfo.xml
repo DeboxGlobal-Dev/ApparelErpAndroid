@@ -18,10 +18,10 @@
             android:layout_height="wrap_content"
             android:text="Style Id :"
             android:layout_gravity="center"
-            android:textColor="@color/black"
+            android:textColor="#979A9A"
             android:textSize="12sp"
-            android:fontFamily="@font/futura_heavy_font"
-            app:fontFamily="@font/futura_heavy_font"
+            android:fontFamily="@font/universcondensedbold"
+            app:fontFamily="@font/universcondensedbold"
             android:layout_weight=".4"
             android:layout_marginLeft="15dp"/>
 
@@ -33,8 +33,8 @@
             android:layout_gravity="center"
             android:textColor="@color/black"
             android:textSize="14sp"
-            android:fontFamily="@font/futura_heavy_font"
-            app:fontFamily="@font/futura_heavy_font"
+            android:fontFamily="@font/universcondensedbold"
+            app:fontFamily="@font/universcondensedbold"
             android:layout_weight="1.6"/>
 
     </LinearLayout>
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="2"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="15dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -83,17 +83,17 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="2"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="2dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TNA Progress : "
             android:layout_gravity="center"
-            android:textColor="@color/black"
+            android:textColor="#979A9A"
             android:textSize="12sp"
-            android:fontFamily="@font/futura_heavy_font"
-            app:fontFamily="@font/futura_heavy_font"
+            android:fontFamily="@font/universcondensedbold"
+            app:fontFamily="@font/universcondensedbold"
             android:layout_weight=".1"
             android:layout_marginLeft="15dp"/>
 
@@ -102,7 +102,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1.9"
-            android:thumbTint="@color/blue"/>
+            android:thumbTint="@color/blue"
+            android:clickable="false"/>
 
     </LinearLayout>
 
@@ -150,17 +151,17 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="2"
-        android:layout_marginTop="25dp">
+        android:layout_marginTop="15dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Status :        "
             android:layout_gravity="center"
-            android:textColor="@color/black"
+            android:textColor="#979A9A"
             android:textSize="12sp"
-            android:fontFamily="@font/futura_heavy_font"
-            app:fontFamily="@font/futura_heavy_font"
+            android:fontFamily="@font/universcondensedbold"
+            app:fontFamily="@font/universcondensedbold"
             android:layout_weight=".2"
             android:layout_marginLeft="15dp"/>
 
@@ -172,8 +173,8 @@
             android:textColor="@color/black"
             android:textSize="14sp"
             android:id="@+id/status_STYLEINFO"
-            android:fontFamily="@font/futura_heavy_font"
-            app:fontFamily="@font/futura_heavy_font"
+            android:fontFamily="@font/universcondensedbold"
+            app:fontFamily="@font/universcondensedbold"
             android:layout_weight="1.8"
             android:layout_marginLeft="15dp"/>
 
@@ -192,17 +193,17 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="2"
-        android:layout_marginTop="25dp">
+        android:layout_marginTop="15dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Priority : "
             android:layout_gravity="center"
-            android:textColor="@color/black"
+            android:textColor="#979A9A"
             android:textSize="12sp"
-            android:fontFamily="@font/futura_heavy_font"
-            app:fontFamily="@font/futura_heavy_font"
+            android:fontFamily="@font/universcondensedbold"
+            app:fontFamily="@font/universcondensedbold"
             android:layout_weight=".5"
             android:layout_marginLeft="15dp"/>
 
@@ -221,8 +222,8 @@
             android:layout_gravity="center"
             android:textColor="@color/white"
             android:textSize="11sp"
-            android:fontFamily="@font/futura_heavy_font"
-            app:fontFamily="@font/futura_heavy_font"
+            android:fontFamily="@font/universcondensedbold"
+            app:fontFamily="@font/universcondensedbold"
             android:layout_weight="1"
             android:gravity="center"
             android:paddingLeft="10dp"
@@ -241,8 +242,8 @@
                 android:layout_gravity="center"
                 android:textColor="@color/white"
                 android:textSize="11sp"
-                android:fontFamily="@font/futura_heavy_font"
-                app:fontFamily="@font/futura_heavy_font"
+                android:fontFamily="@font/universcondensedbold"
+                app:fontFamily="@font/universcondensedbold"
                 android:layout_weight="1"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
@@ -261,8 +262,8 @@
                 android:layout_gravity="center"
                 android:textColor="@color/white"
                 android:textSize="11sp"
-                android:fontFamily="@font/futura_heavy_font"
-                app:fontFamily="@font/futura_heavy_font"
+                android:fontFamily="@font/universcondensedbold"
+                app:fontFamily="@font/universcondensedbold"
                 android:layout_weight="1"
                 android:paddingLeft="10dp"
                 android:gravity="center"
@@ -278,13 +279,12 @@
 
     </LinearLayout>
 
-    <View
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:background="#3498DB"
+        android:layout_height="10dp"
+        android:src="@drawable/graydotted_background"
+        android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginRight="10dp"/>
 
 </LinearLayout>

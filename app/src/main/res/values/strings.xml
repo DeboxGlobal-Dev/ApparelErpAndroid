@@ -1,3 +1,29 @@
 <resources>
+
+    <style name="BottomNavigationView">
+        <item name="itemTextAppearanceActive">@style/TextAppearance.BottomNavigationView.Active
+        </item>
+        <item name="itemTextAppearanceInactive">
+            @style/TextAppearance.BottomNavigationView.Inactive
+        </item>
+    </style>
+    <!-- TODO: Remove or change this placeholder text -->
+    <style name="TextAppearance" />
+
+    <style name="TextAppearance.BottomNavigationView" />
+
+    <!-- blank styles for better code readability-->
+    <style name="TextAppearance.BottomNavigationView.Inactive">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="TextAppearance.BottomNavigationView.Active">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <!-- inactive tab icon style -->
     <string name="app_name">ApparelERP</string>
+
+    <!-- active tab icon style -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

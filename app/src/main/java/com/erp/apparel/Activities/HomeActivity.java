@@ -14,101 +14,66 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.erp.apparel.AppConstant.AppNetworkConstants;
-import com.erp.apparel.Data.DialogManager;
 import com.erp.apparel.Data.Prefs;
-import com.erp.apparel.Models.HomeModel;
-import com.erp.apparel.Models.HomeResponseBean;
-import com.erp.apparel.Models.LoginResponseBean;
+import com.erp.apparel.Fragments.ApprovalsFrag;
+import com.erp.apparel.Fragments.DashFrag;
+import com.erp.apparel.Fragments.ProfileFrag;
+import com.erp.apparel.Fragments.ReportsFrag;
+import com.erp.apparel.Fragments.StyleInfoFrag;
+
 import com.erp.apparel.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
-import lecho.lib.hellocharts.model.PieChartData;
-import lecho.lib.hellocharts.model.SliceValue;
-import lecho.lib.hellocharts.view.PieChartView;
-
-public class HomeActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener,NavigationView.OnNavigationItemSelectedListener{
+public class HomeActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener,NavigationView.OnNavigationItemSelectedListener,BottomNavigationView.OnNavigationItemSelectedListener{
 
     NavigationView navigationView;
-    private PieChartView pieChartView,progesschartView;
-    String[] time = {"01 May,2021", "02 May,2021", "03 May,2021", "04 May,2021", "05May,2021"};
-    LinearLayout m_home_ll, m_logout_ll,m_styleinfo_ll;
-    DrawerLayout m_draw;
-    ImageView m_navigation_icon,m_debox;
+    BottomNavigationView bottomNavigationView;
+    public static DrawerLayout m_draw;
+    LinearLayout m_home_menu,m_styleInfo_menu, m_process_menu, m_business_menu, m_otds_menu, m_score_menu,m_produciton_menu,m_preorder_menu, m_spo_menu,m_about_menu,m_profile_menu,m_logout_menu;
+    RelativeLayout m_release_menu;
+
+    DashFrag dashFrag;
+    StyleInfoFrag styleInfoFrag;
+    ImageView m_debox;
     TextView m_firstname;
-    TextView m_totalstyle,m_projection,m_onorder,m_delayed,m_ongoing,m_upcoming;
-    ArrayList<HomeModel> homeModels;
-    Dialog loaderdialog;
+    ImageView m_navigation_icon;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        loaderdialog= DialogManager.getLoaderDialog(this);
-
-        Prefs.INSTANCE.setLoginStatus(true);
 
         navigationView = findViewById(R.id.nav_view);
         m_draw = findViewById(R.id.drawlayout);
-        m_navigation_icon=findViewById(R.id.navigation_icon);
 
-        m_styleinfo_ll=findViewById(R.id.styleinfo_ll);
-
-        m_totalstyle=findViewById(R.id.totalsale_HOME);
-        m_projection=findViewById(R.id.projection_HOME);
-        m_onorder=findViewById(R.id.onorder_HOME);
-        m_delayed=findViewById(R.id.delayed_HOME);
-        m_ongoing=findViewById(R.id.ongoing_HOME);
-        m_upcoming=findViewById(R.id.upcoming_HOME);
+        bottomNavigationView = findViewById(R.id.bottomnavigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
 
-        pieChartView =findViewById(R.id.chart);
-        progesschartView=findViewById(R.id.chartprocess);
-
-        homeModels=new ArrayList<>();
-
-        getDashBoard();
 
 
-        Spinner spin = (Spinner) findViewById(R.id.spinner);
-        spin.setOnItemSelectedListener(this);
 
-        ArrayAdapter aa = new ArrayAdapter(this,R.layout.color_spinner_layout,time);
-        aa.setDropDownViewResource(R.layout.color_spinner_layout);
-        //Setting the ArrayAdapter data on the Spinner
-        spin.setAdapter(aa);
+        dashFrag=new DashFrag();
+        styleInfoFrag=new StyleInfoFrag();
 
-        chart();
-        progresschart();
+        getSupportFragmentManager().beginTransaction().replace(R.id.main_container_lat, new DashFrag()).commit();
 
-        m_navigation_icon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                m_draw.openDrawer(GravityCompat.START);
-            }
-        });
 
         if (navigationView != null) {
             navigationView.setNavigationItemSelectedListener(this);
@@ -116,12 +81,44 @@ public class HomeActivity extends AppCompatActivity implements AdapterView.OnIte
 
         View header = navigationView.getHeaderView(0);
         m_firstname=header.findViewById(R.id.firstname_HEADER);
-        m_home_ll = header.findViewById(R.id.home_ll_HEADER);
-        m_logout_ll = header.findViewById(R.id.logout_ll_HEADER);
+        m_home_menu = header.findViewById(R.id.home_ll_HEADER);
+
+
+        m_logout_menu = header.findViewById(R.id.logout_ll_HEADER);
         m_debox= header.findViewById(R.id.deoxicon);
+
+        m_styleInfo_menu=header.findViewById(R.id.styleinfo_MENU);
+        m_profile_menu=header.findViewById(R.id.profile_MENU);
+        m_process_menu=header.findViewById(R.id.processlight_MENU);
+        m_business_menu=header.findViewById(R.id.businesssummary_MENU);
+        m_otds_menu=header.findViewById(R.id.otds_MENU);
+        m_score_menu=header.findViewById(R.id.scorecard_MENU);
+        m_produciton_menu=header.findViewById(R.id.produtionreport_MENU);
+        m_preorder_menu=header.findViewById(R.id.preordercost_MENU);
+        m_spo_menu=header.findViewById(R.id.spomgmt_MENU);
+        m_about_menu=header.findViewById(R.id.about_MENU);
+        m_release_menu=header.findViewById(R.id.aboutrelease_MENU);
 
 
         m_firstname.setText(Prefs.INSTANCE.getFirstName());
+
+        m_navigation_icon=findViewById(R.id.navigation_icon);
+        m_navigation_icon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                m_draw.openDrawer(GravityCompat.START);
+            }
+        });
+
+        m_home_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
 
         m_debox.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,32 +128,115 @@ public class HomeActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         });
 
-        m_home_ll.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
 
-        m_styleinfo_ll.setOnClickListener(new View.OnClickListener() {
+        m_styleInfo_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this,StyleInfo.class);
-                startActivity(intent);
+               /* Intent intent = new Intent(HomeActivity.this,StyleInfo.class);
+                startActivity(intent);*/
+                getSupportFragmentManager().beginTransaction().replace(R.id.main_container_lat, new StyleInfoFrag()).commit();
+
+                m_draw.closeDrawers();
             }
         });
 
 
-        m_logout_ll.setOnClickListener(new View.OnClickListener() {
+
+        m_process_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,ProcessLight.class);
+                startActivity(intent);
+                m_draw.closeDrawers();
+            }
+        });
+
+
+        m_business_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,BusinessSummary.class);
+                startActivity(intent);
+                m_draw.closeDrawers();
+            }
+        });
+
+
+        m_otds_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,Otds.class);
+                startActivity(intent);
+                m_draw.closeDrawers();
+            }
+        });
+
+
+
+        m_score_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,ScoreCard.class);
+                startActivity(intent);
+                m_draw.closeDrawers();
+            }
+        });
+
+        m_produciton_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,ProdutionReport.class);
+                startActivity(intent);
+                m_draw.closeDrawers();
+            }
+        });
+
+
+        m_preorder_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,PreOrder.class);
+                startActivity(intent);
+                m_draw.closeDrawers();
+            }
+        });
+
+
+        m_spo_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,SpoMgmt.class);
+                startActivity(intent);
+                m_draw.closeDrawers();
+            }
+        });
+
+        m_about_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this,AboutUs.class);
+                startActivity(intent);
+                m_draw.closeDrawers();
+            }
+        });
+
+
+        m_logout_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 opendialog();
             }
         });
 
-
+        m_profile_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               /* Intent intent = new Intent(HomeActivity.this, Profile.class);
+                startActivity(intent);*/
+                getSupportFragmentManager().beginTransaction().replace(R.id.main_container_lat, new ProfileFrag()).commit();
+                m_draw.closeDrawers();
+            }
+        });
     }
 
     @Override
@@ -169,34 +249,136 @@ public class HomeActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
-    public void chart()
-    {
-        ArrayList<SliceValue> pieData = new ArrayList<>();
-        pieData.add(new SliceValue(10,Color.parseColor("#F0ED08")).setLabel(""));
-        pieData.add(new SliceValue(10, Color.parseColor("#66BB6A")).setLabel(""));
-        pieData.add(new SliceValue(10, Color.parseColor("#117DC6")).setLabel(""));
-        PieChartData pieChartData = new PieChartData(pieData);
-        pieChartData.setHasLabels(true).setValueLabelTextSize(10);
-        pieChartData.setHasCenterCircle(true).setCenterText1("").setCenterText1FontSize(10).setCenterText1Color(Color.parseColor("#ff4500"));
-        pieChartView.setPieChartData(pieChartData);
-    }
-
-    public void progresschart()
-    {
-        ArrayList<SliceValue> pieData = new ArrayList<>();
-        pieData.add(new SliceValue(10, Color.parseColor("#66BB6A")).setLabel(""));
-        pieData.add(new SliceValue(10,Color.parseColor("#EF100C")).setLabel(""));
-        pieData.add(new SliceValue(10, Color.parseColor("#EF990C")).setLabel(""));
-        PieChartData pieChartData = new PieChartData(pieData);
-        pieChartData.setHasLabels(true).setValueLabelTextSize(10);
-        pieChartData.setHasCenterCircle(true).setCenterText1("Process").setCenterText1FontSize(10).setCenterText1Color(Color.parseColor("#99A3A4"));
-        pieChartData.setHasCenterCircle(true).setCenterText2("Light System").setCenterText2FontSize(10).setCenterText2Color(Color.parseColor("#99A3A4"));
-        progesschartView.setPieChartData(pieChartData);
-    }
-
     @Override
     public boolean onNavigationItemSelected( MenuItem item) {
-        return false;
+
+       /* int id = item.getItemId();
+
+        if (id == R.id.nav_dashboard) {
+
+            item.setIcon(R.mipmap.dashboardmenu);
+
+            Menu menu = bottomNavigationView.getMenu();
+            MenuItem menuItem1 = menu.getItem(1);
+            menuItem1.setIcon(R.mipmap.stylewhitemenu);
+            MenuItem menuItem2 = menu.getItem(2);
+            menuItem2.setIcon(R.mipmap.approvalwhitemenu);
+            MenuItem menuItem3 = menu.getItem(3);
+            menuItem3.setIcon(R.mipmap.reportwhitemenu);
+            MenuItem menuItem4 = menu.getItem(4);
+            menuItem3.setIcon(R.mipmap.profilewhitemenu);
+
+            getSupportFragmentManager().beginTransaction().replace(R.id.main_container_lat, new DashFrag()).commit();
+        }
+
+       else if (id == R.id.nav_styleinfo) {
+
+            item.setIcon(R.mipmap.styleinfomenu);
+
+            Menu menu = bottomNavigationView.getMenu();
+            MenuItem menuItem1 = menu.getItem(0);
+            menuItem1.setIcon(R.mipmap.dashboardwhitemenu);
+            MenuItem menuItem2 = menu.getItem(2);
+            menuItem2.setIcon(R.mipmap.approvalwhitemenu);
+            MenuItem menuItem3 = menu.getItem(3);
+            menuItem3.setIcon(R.mipmap.reportwhitemenu);
+            MenuItem menuItem4 = menu.getItem(4);
+            menuItem3.setIcon(R.mipmap.profilewhitemenu);
+
+            getSupportFragmentManager().beginTransaction().replace(R.id.main_container_lat, new StyleInfoFrag()).commit();
+        }
+
+        else if (id == R.id.nav_approvals) {
+
+            item.setIcon(R.mipmap.approvalmenu);
+
+            Menu menu = bottomNavigationView.getMenu();
+            MenuItem menuItem1 = menu.getItem(0);
+            menuItem1.setIcon(R.mipmap.dashboardwhitemenu);
+            MenuItem menuItem2 = menu.getItem(1);
+            menuItem2.setIcon(R.mipmap.approvalmenu);
+            MenuItem menuItem3 = menu.getItem(3);
+            menuItem3.setIcon(R.mipmap.reportwhitemenu);
+            MenuItem menuItem4 = menu.getItem(4);
+            menuItem3.setIcon(R.mipmap.profilewhitemenu);
+
+         //   getSupportFragmentManager().beginTransaction().replace(R.id.main_container_lat, new StyleInfoFrag()).commit();
+        }
+
+        else if (id == R.id.nav_reports) {
+
+            item.setIcon(R.mipmap.reportmenu);
+
+            Menu menu = bottomNavigationView.getMenu();
+            MenuItem menuItem1 = menu.getItem(0);
+            menuItem1.setIcon(R.mipmap.dashboardwhitemenu);
+            MenuItem menuItem2 = menu.getItem(1);
+            menuItem2.setIcon(R.mipmap.approvalmenu);
+            MenuItem menuItem3 = menu.getItem(2);
+            menuItem3.setIcon(R.mipmap.reportmenu);
+            MenuItem menuItem4 = menu.getItem(4);
+            menuItem3.setIcon(R.mipmap.profilewhitemenu);
+
+            //   getSupportFragmentManager().beginTransaction().replace(R.id.main_container_lat, new StyleInfoFrag()).commit();
+        }
+
+        else if (id == R.id.nav_profile) {
+
+            item.setIcon(R.mipmap.profilemenu);
+
+            Menu menu = bottomNavigationView.getMenu();
+            MenuItem menuItem1 = menu.getItem(0);
+            menuItem1.setIcon(R.mipmap.dashboardwhitemenu);
+            MenuItem menuItem2 = menu.getItem(1);
+            menuItem2.setIcon(R.mipmap.approvalmenu);
+            MenuItem menuItem3 = menu.getItem(2);
+            menuItem3.setIcon(R.mipmap.reportmenu);
+            MenuItem menuItem4 = menu.getItem(3);
+            menuItem3.setIcon(R.mipmap.profilemenu);
+
+            //   getSupportFragmentManager().beginTransaction().replace(R.id.main_container_lat, new StyleInfoFrag()).commit();
+        }
+*/
+
+
+        switch (item.getItemId()) {
+            case R.id.nav_dashboard:
+                getSupportFragmentManager().beginTransaction().replace(R.id.main_container_lat, new DashFrag()).commit();
+                item.setIcon(R.mipmap.dashboardmenu);
+                break;
+
+            case R.id.nav_profile:
+                getSupportFragmentManager().beginTransaction().replace(R.id.main_container_lat, new ProfileFrag()).commit();
+                item.setIcon(R.mipmap.profilemenucolor);
+                break;
+
+            case R.id.nav_styleinfo:
+                getSupportFragmentManager().beginTransaction().replace(R.id.main_container_lat, new StyleInfoFrag()).commit();
+                item.setIcon(R.mipmap.styleinfomenu);
+                break;
+
+
+            case R.id.nav_approvals:
+                getSupportFragmentManager().beginTransaction().replace(R.id.main_container_lat, new ApprovalsFrag()).commit();
+                item.setIcon(R.mipmap.approvalmenu);
+                break;
+
+            case R.id.nav_reports:
+                getSupportFragmentManager().beginTransaction().replace(R.id.main_container_lat, new ReportsFrag()).commit();
+                item.setIcon(R.mipmap.reportmenu);
+                break;
+
+
+
+
+        }
+//        getSupportFragmentManager().beginTransaction().replace(R.id.frame, temp).commit();
+
+        m_draw.closeDrawer(GravityCompat.START);
+        return true;
+
+
+
     }
 
     private void opendialog() {
@@ -229,60 +411,5 @@ public class HomeActivity extends AppCompatActivity implements AdapterView.OnIte
 
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
-    }
-
-    public void getDashBoard(){
-
-        loaderdialog.show();
-
-        String url = AppNetworkConstants.DASHBOARD;
-
-        Log.e("mylog", "MY DashBoard url are: " + url);
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                loaderdialog.dismiss();
-                Log.e("mylog", "your Dashboard response is :" + response);
-
-                try {
-                    HomeResponseBean responseBean = HomeResponseBean.fromJson(response);
-                    if (responseBean != null) {
-
-                        if (responseBean.Status.equals("0")) {
-                            homeModels.addAll(responseBean.TotalRecord);
-
-                            String totalStyle=homeModels.get(0).getTotalStyle();
-                            String delayed=homeModels.get(0).getDelayed();
-                            String onGoing=homeModels.get(0).getOnGoing();
-                            String onOrder=homeModels.get(0).getOnOrder();
-                            String projection=homeModels.get(0).getProjection();
-                            String upComing=homeModels.get(0).getUpComing();
-
-                            m_totalstyle.setText(totalStyle);
-                            m_delayed.setText(delayed);
-                            m_ongoing.setText(onGoing);
-                            m_onorder.setText(onOrder);
-                            m_projection.setText(projection);
-                            m_upcoming.setText(upComing);
-                        }
-                    }
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    Log.e("MyLog", "onResponse: Error: " + e.getMessage());
-                }
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                loaderdialog.dismiss();
-                Toast.makeText(HomeActivity.this, "No Internet...", Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
     }
 }

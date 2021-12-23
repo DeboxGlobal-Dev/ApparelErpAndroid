@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:id="@+id/chgpassback_PROFILE">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@mipmap/backprofile"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change Password"
+            android:layout_gravity="center"
+            android:textColor="#979A9A"
+            android:textSize="14sp"
+            android:fontFamily="@font/universcondensedbold"
+            app:fontFamily="@font/universcondensedbold"
+            android:layout_toRightOf="@id/profileicon"
+            android:layout_marginLeft="5dp"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/whiteblack_background"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/oldpass_ll"
+        android:padding="5dp">
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@mipmap/oldpass"
+            android:layout_gravity="center"
+            android:id="@+id/oldkey"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="3dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Old Password"
+            android:layout_gravity="center"
+            android:textColor="#979A9A"
+            android:textSize="12sp"
+            android:id="@+id/oldpass_PROFILE"
+            android:fontFamily="@font/universcondensedbold"
+            app:fontFamily="@font/universcondensedbold"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp"
+            android:paddingBottom="3dp"
+            android:maxLength="12"
+            android:layout_toRightOf="@+id/oldkey"
+            android:background="@color/white"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/whiteblack_background"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/newpass_ll"
+        android:padding="5dp">
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@mipmap/key"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/newpass"
+            android:layout_marginTop="3dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="New Password"
+            android:layout_gravity="center"
+            android:textColor="#979A9A"
+            android:textSize="12sp"
+            android:id="@+id/newpass_PROFILE"
+            android:fontFamily="@font/universcondensedbold"
+            app:fontFamily="@font/universcondensedbold"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp"
+            android:background="@color/white"
+            android:paddingBottom="3dp"
+            android:maxLength="12"
+            android:layout_toRightOf="@+id/newpass"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/whiteblack_background"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/confirmpass_ll"
+        android:padding="5dp">
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@mipmap/key"
+            android:layout_gravity="center"
+            android:id="@+id/confirmpass"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="3dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirm Password"
+            android:layout_gravity="center"
+            android:textColor="#979A9A"
+            android:textSize="13sp"
+            android:id="@+id/confirmpass_PROFILE"
+            android:fontFamily="@font/universcondensedbold"
+            app:fontFamily="@font/universcondensedbold"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp"
+            android:background="@color/white"
+            android:paddingBottom="3dp"
+            android:maxLength="12"
+            android:layout_toRightOf="@+id/confirmpass"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:id="@+id/update_PROFILE"
+        android:fontFamily="@font/universcondensedbold"
+        app:fontFamily="@font/universcondensedbold"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/confirmpass"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginRight="90dp"
+        android:background="@drawable/greensquare_background" />
+
+</LinearLayout>

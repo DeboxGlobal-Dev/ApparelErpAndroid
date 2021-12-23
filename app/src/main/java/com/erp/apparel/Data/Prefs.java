@@ -51,12 +51,21 @@ public enum Prefs {
         editor.commit();
     }
 
-    public String getCategoryID() {
-        return preferences.getString(PrefKey.categoryID.toString(), "");
+    public String getID() {
+        return preferences.getString(PrefKey.id.toString(), "");
     }
 
-    public void setCategoryID(String userOtp) {
-        editor.putString(PrefKey.categoryID.toString(), userOtp);
+    public void setID(String id) {
+        editor.putString(PrefKey.id.toString(), id);
+        editor.commit();
+    }
+
+    public String getOldPassowrd() {
+        return preferences.getString(PrefKey.oldpassword.toString(), "");
+    }
+
+    public void setOldPassword(String oldpassword) {
+        editor.putString(PrefKey.oldpassword.toString(), oldpassword);
         editor.commit();
     }
 
@@ -98,6 +107,135 @@ public enum Prefs {
     }
 
 
+    public void setFactorysot(int factorysot) {
+        editor.putInt(PrefKey.factorysot.toString(),factorysot);
+        editor.commit();
+    }
+
+    public int getFactorysot() {
+        return preferences.getInt(PrefKey.factorysot.toString(), 0);
+    }
+
+    public void setOverallsot(int overall) {
+        editor.putInt(PrefKey.overallsot.toString(),overall);
+        editor.commit();
+    }
+
+    public int getOverallsot() {
+        return preferences.getInt(PrefKey.overallsot.toString(), 0);
+    }
+
+    public void setCfair(int cfair) {
+        editor.putInt(PrefKey.cfair.toString(),cfair);
+        editor.commit();
+    }
+
+    public int getCfair() {
+        return preferences.getInt(PrefKey.cfair.toString(), 0);
+    }
+
+    public void setAirport(int airport) {
+        editor.putInt(PrefKey.airport.toString(),airport);
+        editor.commit();
+    }
+
+    public int getAirport() {
+        return preferences.getInt(PrefKey.airport.toString(), 0);
+    }
+
+    public void setSeaport(int seaport) {
+        editor.putInt(PrefKey.seaport.toString(),seaport);
+        editor.commit();
+    }
+
+    public int getSeaport() {
+        return preferences.getInt(PrefKey.seaport.toString(), 0);
+    }
+
+
+    public String getFhoEarly() {
+        return preferences.getString(PrefKey.fhoEarly.toString(), "0");
+    }
+
+    public void setFhoEarly(String fhoEarly) {
+        editor.putString(PrefKey.fhoEarly.toString(), fhoEarly);
+        editor.commit();
+    }
+
+    public String getFhoDelay() {
+        return preferences.getString(PrefKey.fhoDelayed.toString(), "0");
+    }
+
+    public void setFhodelay(String fhodelay) {
+        editor.putString(PrefKey.fhoDelayed.toString(), fhodelay);
+        editor.commit();
+    }
+
+    public String getFhoOntime() {
+        return preferences.getString(PrefKey.fhoOntime.toString(), "0");
+    }
+
+    public void setFhoOntime(String fhoOntime) {
+        editor.putString(PrefKey.fhoOntime.toString(), fhoOntime);
+        editor.commit();
+    }
+
+    public String getPcdEarly() {
+        return preferences.getString(PrefKey.pcdEarly.toString(), "0");
+    }
+
+    public void setPcdEarly(String pcdEarly) {
+        editor.putString(PrefKey.pcdEarly.toString(), pcdEarly);
+        editor.commit();
+    }
+
+    public String getPcdDelay() {
+        return preferences.getString(PrefKey.pcdDelayed.toString(), "0");
+    }
+
+    public void setPcddelay(String pcddelay) {
+        editor.putString(PrefKey.pcdDelayed.toString(), pcddelay);
+        editor.commit();
+    }
+
+
+    public String getPcdOntime() {
+        return preferences.getString(PrefKey.pcdOntime.toString(), "0");
+    }
+
+    public void setPcdOntime(String pcdOntime) {
+        editor.putString(PrefKey.pcdOntime.toString(), pcdOntime);
+        editor.commit();
+    }
+
+
+    public int getDelayed() {
+        return preferences.getInt(PrefKey.delayed.toString(), 0);
+    }
+
+    public void setDelayed(int delayed) {
+        editor.putInt(PrefKey.delayed.toString(),delayed);
+        editor.commit();
+    }
+
+    public int getOngoing() {
+        return preferences.getInt(PrefKey.ongoing.toString(), 0);
+    }
+
+    public void setOngoing(int ongoing) {
+        editor.putInt(PrefKey.ongoing.toString(),ongoing);
+        editor.commit();
+    }
+
+    public int getUpcoming() {
+        return preferences.getInt(PrefKey.upcoming.toString(), 0);
+    }
+
+    public void setUpcoming(int upcoming) {
+        editor.putInt(PrefKey.upcoming.toString(),upcoming);
+        editor.commit();
+    }
+
     enum PrefKey {
         userPhone,
         userOtp,
@@ -107,8 +245,23 @@ public enum Prefs {
         defaultAddress,
         defaultAddressOne,
         firstName,
-        lastName
-
+        lastName,
+        factorysot,
+        overallsot,
+        cfair,
+        airport,
+        seaport,
+        fhoEarly,
+        fhoDelayed,
+        fhoOntime,
+        pcdEarly,
+        pcdDelayed,
+        pcdOntime,
+        id,
+        oldpassword,
+        delayed,
+        ongoing,
+        upcoming
 
     }
 }

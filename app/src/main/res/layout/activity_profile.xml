@@ -1,0 +1,814 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+     android:layout_width="match_parent"
+    android:id="@+id/nested_PROFILE">
+
+<LinearLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activities.HomeActivity"
+    android:background="@mipmap/homebg">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/navigation_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="16dp"
+            android:src="@mipmap/hamberger" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:padding="10dp"
+            android:src="@mipmap/apperalloginlogo"
+            android:layout_marginTop="15dp"/>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:src="@mipmap/deboxicon"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"/>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="670dp"
+        android:orientation="vertical"
+        android:background="@drawable/white_background">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/profileicon"
+                android:id="@+id/profileicon"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Profile"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:fontFamily="@font/universcondensedbold"
+                app:fontFamily="@font/universcondensedbold"
+                android:layout_marginTop="13dp"
+                android:layout_toRightOf="@id/profileicon"
+                android:layout_marginLeft="5dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="30dp">
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="120dp"
+                    android:src="@mipmap/profileimg"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name"
+                    android:id="@+id/profilename_PROFILE"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:textSize="13sp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"
+                    android:layout_marginTop="5dp"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/edit_ll"
+                android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit"
+                android:textColor="#979A9A"
+                android:textSize="13sp"
+                android:fontFamily="@font/universcondensedbold"
+                app:fontFamily="@font/universcondensedbold"/>
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@mipmap/edit"
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@mipmap/ticlgreen"
+                android:layout_marginLeft="5dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center"
+                android:id="@+id/tick_PROFILE"
+                android:visibility="gone"/>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:id="@+id/showprofile_ll">
+
+            <LinearLayout
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/left_ll">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="First Name"
+                    android:textColor="#979A9A"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+               <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sanjeev"
+                android:textColor="@color/black"
+                   android:id="@+id/fname_PROFILE"
+                android:textSize="13sp"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/universcondensedbold"
+                app:fontFamily="@font/universcondensedbold"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Last Name"
+                    android:textColor="#979A9A"
+                    android:textSize="12sp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kumar"
+                    android:textColor="@color/black"
+                    android:id="@+id/lname_PROFILE"
+                    android:textSize="13sp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone"
+                    android:textColor="#979A9A"
+                    android:textSize="12sp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8826254837"
+                    android:textColor="@color/black"
+                    android:id="@+id/phone_PROFILE"
+                    android:textSize="13sp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date Modified"
+                    android:textColor="#979A9A"
+                    android:textSize="12sp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="17/09/2021 - 15:01"
+                    android:textColor="@color/black"
+                    android:id="@+id/date_PROFILE"
+                    android:textSize="13sp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginRight="10dp"
+                android:layout_toRightOf="@id/left_ll">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Username"
+                    android:textColor="#979A9A"
+                    android:textSize="12sp"
+                    android:layout_gravity="right"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="apparelerp@deboxcrm.com"
+                    android:textColor="@color/black"
+                    android:id="@+id/usename_PROFILE"
+                    android:layout_gravity="right"
+                    android:textSize="13sp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textColor="#979A9A"
+                    android:layout_gravity="right"
+                    android:textSize="12sp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="sanjeev.debox@gmail.com"
+                    android:textColor="@color/black"
+                    android:id="@+id/email_PROFILE"
+                    android:layout_gravity="right"
+                    android:textSize="13sp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Profile"
+                    android:layout_gravity="right"
+                    android:textColor="#979A9A"
+                    android:textSize="12sp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Administrator"
+                    android:layout_gravity="right"
+                    android:textColor="@color/black"
+                    android:id="@+id/profile_PROFILE"
+                    android:textSize="13sp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/edit_profile_ll">
+
+            <LinearLayout
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/left_edit_ll">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="First Name"
+                    android:textColor="#979A9A"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:id="@+id/fname_edit_PROFILE"
+                    android:textSize="13sp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"
+                    android:background="@color/white"
+                    android:textColorHint="@color/black"
+                    android:singleLine="true"
+                    android:maxLength="15"
+                    android:inputType="text"
+                    android:layout_gravity="center"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:cursorVisible="true"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#979A9A"
+                    android:layout_marginRight="15dp"/>
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Last Name"
+                    android:textColor="#979A9A"
+                    android:textSize="12sp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:id="@+id/lname_edit_PROFILE"
+                    android:textSize="13sp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"
+                    android:background="@color/white"
+                    android:maxLength="15"
+                    android:textColorHint="@color/black"
+                    android:singleLine="true"
+                    android:inputType="text"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#979A9A"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone"
+                    android:textColor="#979A9A"
+                    android:textSize="12sp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:id="@+id/phone_edit_PROFILE"
+                    android:textSize="13sp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"
+                    android:background="@color/white"
+                    android:maxLength="10"
+                    android:singleLine="true"
+                    android:textColorHint="@color/black"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#979A9A"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date Modified"
+                    android:textColor="#979A9A"
+                    android:textSize="12sp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="17/09/2021 - 15:01"
+                    android:textColor="@color/black"
+                    android:id="@+id/date_edit_PROFILE"
+                    android:textSize="13sp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"
+                    android:background="@color/white"
+                    android:maxLength="15"
+                    android:textColorHint="@color/black"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#979A9A"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginRight="10dp"
+                android:layout_toRightOf="@id/left_edit_ll">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Username"
+                    android:textColor="#979A9A"
+                    android:textSize="12sp"
+                    android:layout_gravity="right"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:id="@+id/usename_edit_PROFILE"
+                    android:layout_gravity="right"
+                    android:textSize="13sp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"
+                    android:background="@color/white"
+                    android:maxLength="23"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#979A9A"
+                    android:layout_marginLeft="25dp"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textColor="#979A9A"
+                    android:layout_gravity="right"
+                    android:textSize="12sp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:id="@+id/email_edit_PROFILE"
+                    android:layout_gravity="right"
+                    android:textSize="13sp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"
+                    android:background="@color/white"
+                    android:textColorHint="@color/black"
+                    android:maxLength="23"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#979A9A"
+                    android:layout_marginLeft="25dp"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Profile"
+                    android:layout_gravity="right"
+                    android:textColor="#979A9A"
+                    android:textSize="12sp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Administrator"
+                    android:layout_gravity="right"
+                    android:textColor="@color/black"
+                    android:id="@+id/profile_edit_PROFILE"
+                    android:textSize="13sp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"
+                    android:background="@color/white"
+                    android:textColorHint="@color/black"
+                    android:maxLength="15"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#979A9A"
+                    android:layout_marginLeft="25dp"/>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:src="@drawable/graydotted_background"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:id="@+id/chgpass_PROFILE"
+            android:visibility="visible">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@mipmap/key"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change Password"
+                android:layout_gravity="center"
+                android:textColor="#979A9A"
+                android:textSize="13sp"
+                android:fontFamily="@font/universcondensedbold"
+                app:fontFamily="@font/universcondensedbold"
+                android:layout_toRightOf="@id/profileicon"
+                android:layout_marginLeft="5dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:id="@+id/chgpassback_PROFILE"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@mipmap/backprofile"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change Password"
+                android:layout_gravity="center"
+                android:textColor="#979A9A"
+                android:textSize="14sp"
+                android:fontFamily="@font/universcondensedbold"
+                app:fontFamily="@font/universcondensedbold"
+                android:layout_toRightOf="@id/profileicon"
+                android:layout_marginLeft="5dp"/>
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="It's a good to use a strong password that you don't use elsewhere"
+            android:layout_gravity="center"
+            android:textColor="#979A9A"
+            android:textSize="11sp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/universcondensedbold"
+            app:fontFamily="@font/universcondensedbold"
+            android:layout_toRightOf="@id/profileicon"
+            android:layout_marginLeft="15dp"
+            android:singleLine="true"
+            android:id="@+id/desc_PROFILE"
+            android:visibility="visible"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/whiteblack_background"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/oldpass_ll"
+            android:padding="5dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@mipmap/oldpass"
+                android:layout_gravity="center"
+                android:id="@+id/oldkey"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="3dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Old Password"
+                android:layout_gravity="center"
+                android:textColor="#979A9A"
+                android:textSize="12sp"
+                android:id="@+id/oldpass_PROFILE"
+                android:fontFamily="@font/universcondensedbold"
+                app:fontFamily="@font/universcondensedbold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                android:paddingBottom="3dp"
+                android:layout_toRightOf="@+id/oldkey"
+                android:background="@color/white"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/whiteblack_background"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/newpass_ll"
+            android:padding="5dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@mipmap/key"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/newpass"
+                android:layout_marginTop="3dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="New Password"
+                android:layout_gravity="center"
+                android:textColor="#979A9A"
+                android:textSize="12sp"
+                android:id="@+id/newpass_PROFILE"
+                android:fontFamily="@font/universcondensedbold"
+                app:fontFamily="@font/universcondensedbold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/white"
+                android:paddingBottom="3dp"
+                android:layout_toRightOf="@+id/newpass"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/whiteblack_background"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/confirmpass_ll"
+            android:padding="5dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@mipmap/key"
+                android:layout_gravity="center"
+                android:id="@+id/confirmpass"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="3dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Confirm Password"
+                android:layout_gravity="center"
+                android:textColor="#979A9A"
+                android:textSize="13sp"
+                android:id="@+id/confirmpass_PROFILE"
+                android:fontFamily="@font/universcondensedbold"
+                app:fontFamily="@font/universcondensedbold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/white"
+                android:paddingBottom="3dp"
+                android:layout_toRightOf="@+id/confirmpass"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:id="@+id/update_PROFILE"
+            android:fontFamily="@font/universcondensedbold"
+            app:fontFamily="@font/universcondensedbold"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/confirmpass"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_marginLeft="90dp"
+            android:layout_marginRight="90dp"
+            android:background="@drawable/greensquare_background"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
+</androidx.core.widget.NestedScrollView>

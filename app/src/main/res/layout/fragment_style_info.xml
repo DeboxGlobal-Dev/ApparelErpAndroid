@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activities.HomeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/white_background"
+        android:paddingBottom="20dp"
+        android:layout_marginTop="85dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/whiteblack_background"
+            android:paddingBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/filter_ll">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/filtergray"
+                android:layout_gravity="center"
+                android:id="@+id/filter"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="12dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Search"
+                android:layout_gravity="center"
+                android:textColor="#979A9A"
+                android:textSize="16sp"
+                android:id="@+id/search_TV"
+                android:fontFamily="@font/universcondensedbold"
+                app:fontFamily="@font/universcondensedbold"
+                android:background="@color/white"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="12dp"
+                android:layout_toRightOf="@+id/filter"/>
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@mipmap/cancelgray"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_alignParentRight="true"
+                android:id="@+id/cancel_search"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="12dp"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1.25"
+                android:layout_marginTop="5dp">
+
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:src="@mipmap/styleinfocolor"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Style info"
+                    android:layout_gravity="center"
+                    android:textColor="#979A9A"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight=".75"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="69"
+                    android:id="@+id/totalstyle_STYLEINO"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:fontFamily="@font/futura_heavy_font"
+                    app:fontFamily="@font/futura_heavy_font"
+                    android:padding="15dp"
+                    android:background="@drawable/whiteblue_background"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Styles"
+                    android:layout_gravity="center"
+                    android:textColor="#979A9A"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"
+                    android:layout_marginTop="5dp"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight=".75"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="36"
+                    android:id="@+id/projection_STYLEINO"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:fontFamily="@font/futura_heavy_font"
+                    app:fontFamily="@font/futura_heavy_font"
+                    android:padding="15dp"
+                    android:background="@drawable/whiteyellow_background"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Projection"
+                    android:layout_gravity="center"
+                    android:textColor="#979A9A"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"
+                    android:layout_marginTop="5dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight=".75"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="33"
+                    android:id="@+id/onorder_STYLEINO"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:fontFamily="@font/futura_heavy_font"
+                    app:fontFamily="@font/futura_heavy_font"
+                    android:padding="15dp"
+                    android:background="@drawable/whitered_background"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="On-Order"
+                    android:layout_gravity="center"
+                    android:textColor="#979A9A"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/universcondensedbold"
+                    app:fontFamily="@font/universcondensedbold"
+                    android:layout_marginTop="5dp"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <View
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#3498DB"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@drawable/blue_background"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/style_REC"
+        android:background="@drawable/white_background"
+        android:layout_marginBottom="100dp"/>
+
+</LinearLayout>

@@ -21,6 +21,7 @@ import com.erp.apparel.Models.StyleInfoModel;
 import com.erp.apparel.R;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class StyleInfoAdapter extends RecyclerView.Adapter<StyleInfoAdapter.RecViewHolder> {
 
@@ -57,7 +58,10 @@ public class StyleInfoAdapter extends RecyclerView.Adapter<StyleInfoAdapter.RecV
         holder.seekBar_blue.setProgress(tnaProgress);
         holder.m_seek_TV.setText(tnaProgress+"%");
 
-        holder.seekBar_blue.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        holder.seekBar_blue.setEnabled(false);
+
+
+       /* holder.seekBar_blue.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 //   Toast.makeText(getApplicationContext(),"seekbar progress: "+progress, Toast.LENGTH_SHORT).show();
@@ -74,7 +78,7 @@ public class StyleInfoAdapter extends RecyclerView.Adapter<StyleInfoAdapter.RecV
             public void onStopTrackingTouch(SeekBar seekBar) {
                 //   Toast.makeText(getApplicationContext(),"seekbar touch stopped!", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
 
 
 
@@ -82,22 +86,28 @@ public class StyleInfoAdapter extends RecyclerView.Adapter<StyleInfoAdapter.RecV
 
         if(priority.equals("Low"))
         {
-            holder.m_low.setBackgroundColor(Color.parseColor("#D91E0B"));
+          /*  holder.m_low.setBackgroundColor(Color.parseColor("#D91E0B"));
             holder.m_medium.setBackgroundColor(Color.parseColor("#99A3A4"));
-            holder.m_high.setBackgroundColor(Color.parseColor("#99A3A4"));
-            /*holder.m_low.setBackgroundResource(R.drawable.red_background);
+            holder.m_high.setBackgroundColor(Color.parseColor("#99A3A4"));*/
+            holder.m_low.setBackgroundResource(R.drawable.red_background);
             holder.m_high.setBackgroundResource(R.drawable.graydark_background);
-            holder.m_medium.setBackgroundResource(R.drawable.graydark_background);*/
+            holder.m_medium.setBackgroundResource(R.drawable.graydark_background);
         }
         else if(priority.equals("Medium")){
-            holder.m_low.setBackgroundColor(Color.parseColor("#99A3A4"));
+            /*holder.m_low.setBackgroundColor(Color.parseColor("#99A3A4"));
             holder.m_medium.setBackgroundColor(Color.parseColor("#07900D"));
-            holder.m_high.setBackgroundColor(Color.parseColor("#99A3A4"));
+            holder.m_high.setBackgroundColor(Color.parseColor("#99A3A4"));*/
+            holder.m_low.setBackgroundResource(R.drawable.graydark_background);
+            holder.m_high.setBackgroundResource(R.drawable.graydark_background);
+            holder.m_medium.setBackgroundResource(R.drawable.green_background);
         }
         else {
-            holder.m_low.setBackgroundColor(Color.parseColor("#99A3A4"));
+            /*holder.m_low.setBackgroundColor(Color.parseColor("#99A3A4"));
             holder.m_medium.setBackgroundColor(Color.parseColor("#99A3A4"));
-            holder.m_high.setBackgroundColor(Color.parseColor("#FAD209"));
+            holder.m_high.setBackgroundColor(Color.parseColor("#FAD209"));*/
+            holder.m_low.setBackgroundResource(R.drawable.graydark_background);
+            holder.m_high.setBackgroundResource(R.drawable.yellow_background);
+            holder.m_medium.setBackgroundResource(R.drawable.graydark_background);
 
         }
 
@@ -112,6 +122,11 @@ public class StyleInfoAdapter extends RecyclerView.Adapter<StyleInfoAdapter.RecV
         return demolist.size();
     }
 
+    public void filterList(ArrayList<StyleInfoModel> filterlist) {
+
+        demolist=filterlist;
+        notifyDataSetChanged();
+    }
 
 
     class RecViewHolder extends RecyclerView.ViewHolder {
